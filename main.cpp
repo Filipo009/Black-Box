@@ -1,4 +1,8 @@
-﻿#include <iostream>
+﻿// Filip Jakubowski, 197644 EiT1 <---> Projekt 1 (Black Box)
+
+
+
+#include <iostream>
 #include <chrono>
 #include <thread>
 
@@ -232,12 +236,30 @@ void losowanie_kordow_atomow(int AtomX[], int AtomY[], int plansza, bool Atom[20
 		std::cout << "-------------------------------------------------" << std::endl;
 
 		std::cout << "Wybierz ilosc atomow: ";
-		std::cin >> ilosc_atomow;
+		while (true) {
+			if (std::cin >> ilosc_atomow) {
+				break;
+			}
+			else {
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				std::cout << "Nieprawidlowe dane. Wprowadz liczbe jeszcze raz." << std::endl;
+			}
+		}
 
 		if (ilosc_atomow != 3 && ilosc_atomow != 4 && ilosc_atomow != 5) {
 			while (ilosc_atomow != 3 && ilosc_atomow != 4 && ilosc_atomow != 5) {
 				std::cout << "Niepoprawna ilosc atomow, podaj prawidlowe dane: ";
-				std::cin >> ilosc_atomow;
+				while (true) {
+					if (std::cin >> ilosc_atomow) {
+						break;
+					}
+					else {
+						std::cin.clear();
+						std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+						std::cout << "Nieprawidlowe dane. Wprowadz liczbe jeszcze raz." << std::endl;
+					}
+				}
 			}
 		}
 	}
@@ -252,12 +274,30 @@ void losowanie_kordow_atomow(int AtomX[], int AtomY[], int plansza, bool Atom[20
 		std::cout << "-------------------------------------------------" << std::endl;
 
 		std::cout << "Wybierz ilosc atomow: ";
-		std::cin >> ilosc_atomow;
+		while (true) {
+			if (std::cin >> ilosc_atomow) {
+				break;
+			}
+			else {
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				std::cout << "Nieprawidlowe dane. Wprowadz liczbe jeszcze raz." << std::endl;
+			}
+		}
 
 		if (ilosc_atomow != 5 && ilosc_atomow != 6 && ilosc_atomow != 4) {
 			while (ilosc_atomow != 5 && ilosc_atomow != 6 && ilosc_atomow != 4) {
 				std::cout << "Niepoprawna ilosc atomow, podaj prawidlowe dane: ";
-				std::cin >> ilosc_atomow;
+				while (true) {
+					if (std::cin >> ilosc_atomow) {
+						break;
+					}
+					else {
+						std::cin.clear();
+						std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+						std::cout << "Nieprawidlowe dane. Wprowadz liczbe jeszcze raz." << std::endl;
+					}
+				}
 			}
 		}
 	}
@@ -270,12 +310,30 @@ void losowanie_kordow_atomow(int AtomX[], int AtomY[], int plansza, bool Atom[20
 		std::cout << "-------------------------------------------------" << std::endl;
 
 		std::cout << "Wybierz ilosc atomow: ";
-		std::cin >> ilosc_atomow;
+		while (true) {
+			if (std::cin >> ilosc_atomow) {
+				break;
+			}
+			else {
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				std::cout << "Nieprawidlowe dane. Wprowadz liczbe jeszcze raz." << std::endl;
+			}
+		}
 
 		if (ilosc_atomow != 8 && ilosc_atomow != 7 && ilosc_atomow != 6) {
 			while (ilosc_atomow != 8 && ilosc_atomow != 7 && ilosc_atomow != 6) {
 				std::cout << "Niepoprawna ilosc atomow, podaj prawidlowe dane: ";
-				std::cin >> ilosc_atomow;
+				while (true) {
+					if (std::cin >> ilosc_atomow) {
+						break;
+					}
+					else {
+						std::cin.clear();
+						std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+						std::cout << "Nieprawidlowe dane. Wprowadz liczbe jeszcze raz." << std::endl;
+					}
+				}
 			}
 		}
 	}
@@ -1093,12 +1151,30 @@ void wstep(int &plansza) {
 	system("cls");
 
 	std::cout << "Wybierz wielkosc boku planszy (5/ 8/ 10): ";
-	std::cin >> plansza;
+	while (true) {
+		if (std::cin >> plansza) {
+			break;
+		}
+		else {
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cout << "Nieprawidlowe dane. Wprowadz liczbe jeszcze raz." << std::endl;
+		}
+	}
 
 	if (plansza != 5 && plansza != 8 && plansza != 10) {
 		while (plansza != 5 && plansza != 8 && plansza != 10) {
 			std::cout << "Niepoprawny rozmiar planszy, wpisz prawidlowa wartosc: ";
-			std::cin >> plansza;
+			while (true) {
+				if (std::cin >> plansza) {
+					break;
+				}
+				else {
+					std::cin.clear();
+					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+					std::cout << "Nieprawidlowe dane. Wprowadz liczbe jeszcze raz." << std::endl;
+				}
+			}
 		}
 	}
 
