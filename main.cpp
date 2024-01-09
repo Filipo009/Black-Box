@@ -5,6 +5,7 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
+#include <conio.h>
 
 
 void generowanie_planszy(int plansza, int obiekty[20][20], bool kursor[20][20], bool Atom[20][20]) {
@@ -224,7 +225,7 @@ void wypelnianie_tablic(int obiekty[20][20], bool kursor[20][20], bool Atom[20][
 	kursor[1][1] = true;
 }
 
-void losowanie_kordow_atomow(int AtomX[], int AtomY[], int plansza, bool Atom[20][20], int &ilosc_atomow, int &atomy_backup) {
+void losowanie_kordow_atomow(int AtomX[], int AtomY[], int plansza, bool Atom[20][20], int& ilosc_atomow, int& atomy_backup) {
 	srand(time(0));
 
 	if (plansza == 5) {
@@ -237,27 +238,27 @@ void losowanie_kordow_atomow(int AtomX[], int AtomY[], int plansza, bool Atom[20
 
 		std::cout << "Wybierz ilosc atomow: ";
 		while (true) {
-			if (std::cin >> ilosc_atomow) {
+			if (ilosc_atomow = _getch() - '0') {
 				break;
 			}
 			else {
 				std::cin.clear();
 				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				std::cout << "Nieprawidlowe dane. Wprowadz liczbe jeszcze raz." << std::endl;
+				std::cout << std::endl << "Nieprawidlowe dane. Wprowadz liczbe jeszcze raz." << std::endl;
 			}
 		}
 
 		if (ilosc_atomow != 3 && ilosc_atomow != 4 && ilosc_atomow != 5) {
 			while (ilosc_atomow != 3 && ilosc_atomow != 4 && ilosc_atomow != 5) {
-				std::cout << "Niepoprawna ilosc atomow, podaj prawidlowe dane: ";
+				std::cout << std::endl << "Niepoprawna ilosc atomow, podaj prawidlowe dane: ";
 				while (true) {
-					if (std::cin >> ilosc_atomow) {
+					if (ilosc_atomow = _getch() - '0') {
 						break;
 					}
 					else {
 						std::cin.clear();
 						std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-						std::cout << "Nieprawidlowe dane. Wprowadz liczbe jeszcze raz." << std::endl;
+						std::cout << std::endl << "Nieprawidlowe dane. Wprowadz liczbe jeszcze raz." << std::endl;
 					}
 				}
 			}
@@ -275,27 +276,27 @@ void losowanie_kordow_atomow(int AtomX[], int AtomY[], int plansza, bool Atom[20
 
 		std::cout << "Wybierz ilosc atomow: ";
 		while (true) {
-			if (std::cin >> ilosc_atomow) {
+			if (ilosc_atomow = _getch() - '0') {
 				break;
 			}
 			else {
 				std::cin.clear();
 				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				std::cout << "Nieprawidlowe dane. Wprowadz liczbe jeszcze raz." << std::endl;
+				std::cout << std::endl << "Nieprawidlowe dane. Wprowadz liczbe jeszcze raz." << std::endl;
 			}
 		}
 
 		if (ilosc_atomow != 5 && ilosc_atomow != 6 && ilosc_atomow != 4) {
 			while (ilosc_atomow != 5 && ilosc_atomow != 6 && ilosc_atomow != 4) {
-				std::cout << "Niepoprawna ilosc atomow, podaj prawidlowe dane: ";
+				std::cout << std::endl << "Niepoprawna ilosc atomow, podaj prawidlowe dane: ";
 				while (true) {
-					if (std::cin >> ilosc_atomow) {
+					if (ilosc_atomow = _getch() - '0') {
 						break;
 					}
 					else {
 						std::cin.clear();
 						std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-						std::cout << "Nieprawidlowe dane. Wprowadz liczbe jeszcze raz." << std::endl;
+						std::cout << std::endl << "Nieprawidlowe dane. Wprowadz liczbe jeszcze raz." << std::endl;
 					}
 				}
 			}
@@ -311,27 +312,27 @@ void losowanie_kordow_atomow(int AtomX[], int AtomY[], int plansza, bool Atom[20
 
 		std::cout << "Wybierz ilosc atomow: ";
 		while (true) {
-			if (std::cin >> ilosc_atomow) {
+			if (ilosc_atomow = _getch() - '0') {
 				break;
 			}
 			else {
 				std::cin.clear();
 				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				std::cout << "Nieprawidlowe dane. Wprowadz liczbe jeszcze raz." << std::endl;
+				std::cout << std::endl << "Nieprawidlowe dane. Wprowadz liczbe jeszcze raz." << std::endl;
 			}
 		}
 
 		if (ilosc_atomow != 8 && ilosc_atomow != 7 && ilosc_atomow != 6) {
 			while (ilosc_atomow != 8 && ilosc_atomow != 7 && ilosc_atomow != 6) {
-				std::cout << "Niepoprawna ilosc atomow, podaj prawidlowe dane: ";
+				std::cout << std::endl << "Niepoprawna ilosc atomow, podaj prawidlowe dane: ";
 				while (true) {
-					if (std::cin >> ilosc_atomow) {
+					if (ilosc_atomow = _getch() - '0') {
 						break;
 					}
 					else {
 						std::cin.clear();
 						std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-						std::cout << "Nieprawidlowe dane. Wprowadz liczbe jeszcze raz." << std::endl;
+						std::cout << std::endl << "Nieprawidlowe dane. Wprowadz liczbe jeszcze raz." << std::endl;
 					}
 				}
 			}
@@ -383,7 +384,7 @@ void rozwiazanie(int plansza, bool Atom[20][20], bool ostatnia_plansza, int obie
 	}
 	else if (ostatnia_plansza == true) {
 		std::cout << "Niewiele brakowalo, powodzenia nastepnym razem ;)" << std::endl;
-		std::cout << "Otrzumujesz " <<punkty << " punktow" << std::endl;
+		std::cout << "Otrzumujesz " << punkty << " punktow" << std::endl;
 	}
 
 
@@ -623,7 +624,7 @@ void archiwizacja(bool kursor[20][20], int archiwum_obiekty[100][20][20], int ob
 	}
 }
 
-void wyswietlanie_dla_case_p(bool &ostatnia_plansza, int plansza,bool Atom[20][20], int obiekty[20][20], char &ruch_gracza, bool koniec, bool &wygrana, bool &nowa_gra, int &punkty) {
+void wyswietlanie_dla_case_p(bool& ostatnia_plansza, int plansza, bool Atom[20][20], int obiekty[20][20], char& ruch_gracza, bool koniec, bool& wygrana, bool& nowa_gra, int& punkty) {
 	system("cls");
 	ostatnia_plansza = true;
 
@@ -674,12 +675,11 @@ void instrukcja() {
 	std::cout << std::endl;
 
 	std::cout << "By wyjsc z instrukcji wcisnij dowolny przycisk... " << std::endl;
-	kontynuacja = std::cin.get();
-	kontynuacja = std::cin.get();
+	kontynuacja = _getch();
 	system("cls");
 }
 
-void menu(char& ruch_gracza, bool &nowa_gra) {
+void menu(char& ruch_gracza, bool& nowa_gra) {
 	system("cls");
 
 	char wybor_gracza;
@@ -693,8 +693,7 @@ void menu(char& ruch_gracza, bool &nowa_gra) {
 	std::cout << "----------------------------------------------------------------" << std::endl;
 	std::cout << std::endl;
 	std::cout << "Ruch Gracza: " << std::endl;
-	wybor_gracza = std::cin.get();
-	wybor_gracza = std::cin.get();
+	wybor_gracza = _getch();
 
 	if (wybor_gracza == 'k' || wybor_gracza == 'K') {
 		ruch_gracza = 'k';
@@ -703,14 +702,15 @@ void menu(char& ruch_gracza, bool &nowa_gra) {
 	else if (wybor_gracza == 'n' || wybor_gracza == 'N') {
 		ruch_gracza = 'k';
 	}
-	
+
 	system("cls");
 }
 
 
 
-void movement(char &ruch_gracza, int& Kursorx, int& Kursory, int plansza, bool& koniec, int obiekty[20][20], bool kursor[20][20], int& numer_wiazki, bool Atom[20][20], int archiwum_Kursorx[100], int archiwum_Kursory[100], int& numer_ruchu, int& najwyzszy_zapisany_ruch, int archiwum_obiekty[100][20][20], int &ilosc_atomow, int archiwum_ilosc_atomow[100], bool &nowa_gra, bool &wygrana, int &punkty, int atomy_backup) {
+void movement(char& ruch_gracza, int& Kursorx, int& Kursory, int plansza, bool& koniec, int obiekty[20][20], bool kursor[20][20], int& numer_wiazki, bool Atom[20][20], int archiwum_Kursorx[100], int archiwum_Kursory[100], int& numer_ruchu, int& najwyzszy_zapisany_ruch, int archiwum_obiekty[100][20][20], int& ilosc_atomow, int archiwum_ilosc_atomow[100], bool& nowa_gra, bool& wygrana, int& punkty, int atomy_backup) {
 
+	
 	bool zakoncz = false;
 	int startowyX, startowyY;
 	char kierunek_wiazki;
@@ -723,8 +723,7 @@ void movement(char &ruch_gracza, int& Kursorx, int& Kursory, int plansza, bool& 
 		std::cout << " |  Pozostala ilosc atomow:                               " << ilosc_atomow << '|' << std::endl;
 		std::cout << "-------------------------------------------------------------" << std::endl;
 		std::cout << "Ruch Gracza: ";
-		ruch_gracza = std::cin.get();
-		ruch_gracza = std::cin.get();
+		ruch_gracza = _getch();
 
 
 		switch (ruch_gracza) {
@@ -738,7 +737,7 @@ void movement(char &ruch_gracza, int& Kursorx, int& Kursory, int plansza, bool& 
 			}
 
 			kursor[Kursorx][Kursory] = true;
-			archiwizacja(kursor,archiwum_obiekty, obiekty, Kursorx, Kursory, archiwum_Kursorx, archiwum_Kursory, numer_ruchu, najwyzszy_zapisany_ruch, archiwum_ilosc_atomow, ilosc_atomow);
+			archiwizacja(kursor, archiwum_obiekty, obiekty, Kursorx, Kursory, archiwum_Kursorx, archiwum_Kursory, numer_ruchu, najwyzszy_zapisany_ruch, archiwum_ilosc_atomow, ilosc_atomow);
 			break;
 
 		case 'S': case 's':
@@ -751,8 +750,8 @@ void movement(char &ruch_gracza, int& Kursorx, int& Kursory, int plansza, bool& 
 
 			kursor[Kursorx][Kursory] = true;
 
-		archiwizacja(kursor, archiwum_obiekty, obiekty, Kursorx, Kursory, archiwum_Kursorx, archiwum_Kursory, numer_ruchu, najwyzszy_zapisany_ruch, archiwum_ilosc_atomow, ilosc_atomow);
-		break;
+			archiwizacja(kursor, archiwum_obiekty, obiekty, Kursorx, Kursory, archiwum_Kursorx, archiwum_Kursory, numer_ruchu, najwyzszy_zapisany_ruch, archiwum_ilosc_atomow, ilosc_atomow);
+			break;
 
 		case 'A': case 'a':
 			kursor[Kursorx][Kursory] = false;
@@ -778,7 +777,7 @@ void movement(char &ruch_gracza, int& Kursorx, int& Kursory, int plansza, bool& 
 			archiwizacja(kursor, archiwum_obiekty, obiekty, Kursorx, Kursory, archiwum_Kursorx, archiwum_Kursory, numer_ruchu, najwyzszy_zapisany_ruch, archiwum_ilosc_atomow, ilosc_atomow);
 			break;
 
-		case 'Q': case 'q':
+		case 'M': case 'm':
 			menu(ruch_gracza, nowa_gra);
 			break;
 
@@ -872,7 +871,7 @@ void movement(char &ruch_gracza, int& Kursorx, int& Kursory, int plansza, bool& 
 				if (ilosc_atomow < 0) {
 					std::cout << "Przekroczono liczbe atomow na planszy o " << ilosc_atomow * (-1);
 				}
-				else{
+				else {
 					std::cout << "Na planszy brakuje " << ilosc_atomow << " atomow";
 				}
 
@@ -1068,8 +1067,8 @@ void movement(char &ruch_gracza, int& Kursorx, int& Kursory, int plansza, bool& 
 	}
 
 	else {
-			std::cout << "wcisnieto klawisz 'p' dalsza rozgrywka nie jest mozliwa, wcisnij 'k' aby wyjsc z gry: ";
-			std::cin >> ruch_gracza;
+		std::cout << "wcisnieto klawisz 'p' dalsza rozgrywka nie jest mozliwa, wcisnij 'k' aby wyjsc z gry: ";
+		std::cin >> ruch_gracza;
 	}
 
 	if (Kursorx == 0 && Kursory == 0) {
@@ -1123,9 +1122,9 @@ void movement(char &ruch_gracza, int& Kursorx, int& Kursory, int plansza, bool& 
 }
 
 
-void wstep(int &plansza) {
+void wstep(int& plansza) {
 	const int limit_znakow = 50;
-	char kontynuacja[limit_znakow];
+	char kontynuacja;
 	std::cout << "--------------------------------------------------------------------------------------------------------------------------------------------------" << std::endl;
 	std::cout << "|BBBBBBBBBBBBBBBBB   lllllll                                      kkkkkkkk                BBBBBBBBBBBBBBBBB                                      |" << std::endl;
 	std::cout << "|B::::::::::::::::B  l:::::l                                      k::::::k                B::::::::::::::::B                                     |" << std::endl;
@@ -1147,10 +1146,10 @@ void wstep(int &plansza) {
 	std::cout << "                                                         |autorstwa Filipa Jakubowskiego|" << std::endl;
 	std::cout << "                                                         --------------------------------" << std::endl << std::endl;
 	std::cout << "                                                     By kontynowac wcisnij dowolny przycisk..." << std::endl;
-	std::cin.getline(kontynuacja, limit_znakow);
+	kontynuacja = _getch();
 	system("cls");
 
-	std::cout << "Wybierz wielkosc boku planszy (5/ 8/ 10): ";
+	std::cout << "Wybierz wielkosc boku planszy (5/ 8/ 10), a nastepnie zatwierdz wybrana liczbe przyciskiem ENTER: " << std::endl;
 	while (true) {
 		if (std::cin >> plansza) {
 			break;
@@ -1183,9 +1182,7 @@ void wstep(int &plansza) {
 	std::cout << std::endl;
 	std::cout << "-----------------------------------------------------------------------------------------------------------------" << std::endl;
 	std::cout << "| Bugi:                                                                                                         |" << std::endl;
-	std::cout << "| 1. Wszystkie ruchy prosze koniecznie wykonywac poprzes wcisniecie JEDNEGO klawisza i zatwierdzenie go enterem |" << std::endl;
-	std::cout << "| 2. Jezeli kursor sie zatnie przed wpisaniem swojego ruchu wcisnij jeszcze jeden enter.                        |" << std::endl;
-	std::cout << "| 3. W celu unikniecia bugow zwiazanych z generowaniem planszy zaleca sie granie na pelnym ekranie              |" << std::endl;
+	std::cout << "| 1. W celu unikniecia bugow zwiazanych z generowaniem planszy zaleca sie granie na pelnym ekranie              |" << std::endl;
 	std::cout << "-----------------------------------------------------------------------------------------------------------------" << std::endl;
 	std::cout << std::endl;
 	std::cout << "-----------------------------------------------------------------------------------------------------------------" << std::endl;
@@ -1196,11 +1193,13 @@ void wstep(int &plansza) {
 	std::cout << "| Zycze dobrej zabawy ;)                                                                                        |" << std::endl;
 	std::cout << "-----------------------------------------------------------------------------------------------------------------" << std::endl;
 	std::cout << std::endl;
-	std::cin.getline(kontynuacja, limit_znakow);
+	std::cout << " By kontynouwac wcisnij downolny przycisk..." << std::endl;
+	kontynuacja = _getch();
+	system("cls");
 }
 
 
-void rozgrywka(bool &nowa_gra) {
+void rozgrywka(bool& nowa_gra) {
 	char kontynuacja;
 
 	bool koniec = false;
@@ -1246,7 +1245,7 @@ void rozgrywka(bool &nowa_gra) {
 
 
 int main()
-{	
+{
 	bool nowa_gra = true;
 
 	while (nowa_gra == true) {
